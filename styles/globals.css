@@ -20,9 +20,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background-color: #000;
-
 }
 
 
