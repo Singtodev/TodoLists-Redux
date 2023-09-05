@@ -1,6 +1,5 @@
 import { Todo_AddToList, Todo_TodoList } from "@/components/TodoList";
 import { Provider, useDispatch, useSelector} from 'react-redux';
-import store from "@/context/store";
 import {motion} from 'framer-motion';
 import toast, { Toaster } from 'react-hot-toast';
 import { AUTH_CHECK_LOGIN, AUTH_LOGIN, AUTH_LOGOUT } from "@/context/actions/AuthActions";

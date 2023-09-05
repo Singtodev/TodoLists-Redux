@@ -2,8 +2,8 @@ import { createStore } from 'redux';
 import rootReducer from './reducers';
 import { persistStore , persistReducer , Transform } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-
-
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension'; 
 let store: any;
 
 // Define the persistConfig
@@ -14,6 +14,8 @@ const persistConfig = {
 
 // Create the persisted reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+
 
 if (typeof window !== 'undefined') {
   // Configure Redux DevTools extension in development
