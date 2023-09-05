@@ -12,9 +12,6 @@ export default function Home() {
   const Dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user?.user);
 
-  useEffect(()=> {
-    Dispatch(AUTH_CHECK_LOGIN());
-  },[])
 
   const handleLogout = () => {
     setTimeout(()=> {
@@ -25,17 +22,7 @@ export default function Home() {
     Dispatch(AUTH_LOGOUT());
     Dispatch(AUTH_CHECK_LOGIN());
   }
-  if(user == null){
-    return (
-        <motion.div 
-        initial={{opacity: 0 , y: -10}}
-        animate={{opacity: 1 , y: 0}}
-        exit={{ opacity: 0, y: -10}}
-        className="w-screen h-screen bg-black flex flex-col items-center justify-center px-4 gap-y-6 text-white">
-            Loading....
-        </motion.div>
-    )
-  }
+
 
   return (
     <main>

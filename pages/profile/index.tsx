@@ -12,10 +12,6 @@ export default function Home() {
   const Dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user?.user);
 
-  useEffect(()=> {
-    Dispatch(AUTH_CHECK_LOGIN());
-  },[])
-
   const handleLogout = () => {
         Dispatch(AUTH_LOGOUT());
         Dispatch(AUTH_CHECK_LOGIN());

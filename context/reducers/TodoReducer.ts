@@ -23,33 +23,6 @@ const TodoReducer = (state = initialState , action: any) => {
                 ]
             };
 
-        case "SAVE_STATE_LIST":
-            localStorage.setItem('todos' , JSON.stringify(state.todos));
-            console.log("save");
-            return state;
-        case "RETIVE_STATE_LIST":
-
-            if(localStorage.getItem('todos') != null){
-                try{
-                    const items = JSON.parse(localStorage.getItem('todos')!);
-                    console.log("get state");
-                    return {
-                        ...state,
-                        todos: items
-                    };
-                }catch(err){
-                    return {
-                        ...state,
-                        todos: []
-                    }
-                }
-
-            }
-            
-            return state;
-
-
-
         case "REMOVE_FROM_LIST":
             return {
                 ...state,

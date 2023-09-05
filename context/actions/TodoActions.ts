@@ -14,16 +14,3 @@ export const REMOVE_FROM_LIST = (id: number) => {
     }
 }
 
-export const RETIVE_STATE_LIST = () => {
-    return {
-        type: "RETIVE_STATE_LIST",
-        payload: {}
-    }
-}
-
-export const SAVE_STATE_LIST = () => {
-    return {
-        type: "SAVE_STATE_LIST",
-        payload: {}
-    }
-}

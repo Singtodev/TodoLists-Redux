@@ -4,15 +4,11 @@ import { MdDelete} from 'react-icons/md';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/context/reducers';
 import { useDispatch } from 'react-redux';
-import { REMOVE_FROM_LIST , RETIVE_STATE_LIST, SAVE_STATE_LIST } from '@/context/actions/TodoActions';
+import { REMOVE_FROM_LIST} from '@/context/actions/TodoActions';
 import toast from 'react-hot-toast';
 const TodoLists = () => {
   const Dispatch = useDispatch();
   const todos = useSelector((state: RootState) => state.todos?.todos);
-
-  useEffect(()=> {
-    Dispatch(RETIVE_STATE_LIST());
-  },[])
 
   return (
     <div className={`${todos?.length > 6 ? 'overflow-y-scroll h-[500px] items-center  ' : 'items-start justify-center'} w-full bg-zinc-800 my-4 rounded-lg px-4 py-3 flex flex-col  gap-2`}>
@@ -47,7 +43,6 @@ const ListCard = ({index, item , id}: ListCardProps) => {
 
   const handleRemove = () => {
     Dispatch(REMOVE_FROM_LIST(id))
-    Dispatch(SAVE_STATE_LIST());
     toast('Remove Task Successfully.', {
       icon: '✅'
     });

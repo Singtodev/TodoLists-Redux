@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BsCardChecklist , BsPlus } from 'react-icons/bs';
 import {motion} from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import { ADD_TO_LIST, SAVE_STATE_LIST } from '@/context/actions/TodoActions';
+import { ADD_TO_LIST } from '@/context/actions/TodoActions';
 import toast from 'react-hot-toast';
 
 
@@ -18,7 +18,6 @@ const AddToList = () => {
     //go pass 
 
     Dispatch(ADD_TO_LIST(text));
-    Dispatch(SAVE_STATE_LIST());
     toast('Add Task Successfully.', {
       icon: '✅'
     });
